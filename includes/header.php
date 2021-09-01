@@ -1,3 +1,3 @@
 	<header>
-		<h1>ConstruWeb.gt</h1>
+		<h1>Grafos y lenguajes formales</h1>
 	</header>
