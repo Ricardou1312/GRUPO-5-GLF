@@ -1,5 +1,5 @@
 	<section id="slider">
 		<figure>
-			<img src="imagenes/slider.png" />
+			<img src="imagenes/vision.jpg" />
 		</figure>
 	</section>
