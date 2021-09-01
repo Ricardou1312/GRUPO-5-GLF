@@ -12,6 +12,7 @@
 		include "includes/header.php";
 		include "includes/nav.php";
 		include "includes/slider.php";
+		echo "ESTE ES EL CAMBIO";
 	?>
 	<section class="contenido">
 		<p>
