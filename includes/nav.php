@@ -1,7 +1,7 @@
 	<nav>
 		<ul>
 			<a href="index.php"><li>Inicio</li></a>
-			<a href="proyectos.php"><li>Proyectos</li></a>
-			<a href="contacto.php"><li>Contacto</li></a>
+			<a href="avance1.php"><li>Avance 1</li></a>
+			<a href="integrantes.php"><li>Integrantes</li></a>
 		</ul>
 	</nav>

@@ -12,11 +12,10 @@
 		include "includes/header.php";
 		include "includes/nav.php";
 		include "includes/slider.php";
-		echo "ESTE ES EL CAMBIO";
 	?>
 	<section class="contenido">
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima aut magnam eum, aspernatur officia amet quibusdam nam. Nostrum quo dolores vel, enim eos quis excepturi possimus, dolore ipsum perferendis, porro.
+            Pablo Garcia Urzua
 		</p>
 	</section>
 	<?php
