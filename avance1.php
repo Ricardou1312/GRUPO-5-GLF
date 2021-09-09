@@ -11,10 +11,9 @@
 	<?php
 		include "includes/header.php";
 		include "includes/nav.php";
-		include "includes/slider.php";
 	?>
 	<section class="contenido">
-				<h3></h3> /*titulo*/
+				<h3>Sobre nosotros</h3>
 				<article class="articulos">
 					<p>
 
