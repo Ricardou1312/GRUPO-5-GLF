@@ -16,8 +16,11 @@
 	<section class="contenido">
 		<h3>Nombres - Rut </h3>
         <p>
+            Diego Müller Alegria - 20.597.723-6 <br>
+            Mauro Muñoz Jerez - 19.925.208-9 <br>
             Pablo Garcia Urzua - 20.278.438-0 <br>
-            Ricardo Castillo Vega 20334810-k <br>
+            Ricardo Castillo Vega - 20.334.810-k <br>
+            Gonzalo Zamora Lopez - 20.468.729-3 <br>
 		</p>
 	</section>
 	<?php
