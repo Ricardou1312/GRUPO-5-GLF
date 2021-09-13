@@ -18,3 +18,4 @@
 		?>
 </body>
 </html>
+<!--Comando para pasar sonarqube al programa: sonar-scanner.bat -D"sonar.projectKey=GRUPO-5-GLF" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=abc4ffeac3135e49e28f52c616630bc0ce80990a"-->
