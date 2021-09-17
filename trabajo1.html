@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Grafos</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="icons/favicon.png">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+        <!-- Imports -->
+        <link rel="stylesheet" href="css/master.css">
+        <script defer src="js/popup.js"></script>
+        <script defer src="js/operaciones.js"></script>
+    </head>
+    <body>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="img/grafos.png" alt="Header image" height="100%">
+
+            </div>
+            <div class="sidebar-menu">
+            <ul>
+                <li class="item" id="insert">
+                    <a href="#insert" class="btn"><img src="icons/add.svg" alt="Icon of add" width="15" height="15">INSERTAR</a>
+                    <div class="submenu">
+                        <!-- Insertar una VERTICE -->
+                        <button type="button" data-popup-target="#popup11"><img src="icons/circle.svg" alt="Vertice icon" width="15" height="15">Un v&eacutertice</button>
+                        <div class="popup" id="popup11">
+                            <div class="popup-header">
+                                <h1>Insertar un v&eacutertice</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <div class="formulario">
+                                    <div class="formulario-item">
+                                        <!-- Nombre -->
+                                        <label for="insertarVertice">Nombre del v&eacutertice:</label><br>
+                                        <input type="text" id="insertarVertice" name="vertice" autocomplete="off" required>
+                                    </div>
+                                    <!-- Submit -->
+                                    <button type="button" onclick="setVertice()">Enter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Insertar un ARISTA -->
+                        <button type="button" data-popup-target="#popup12"><img src="icons/line.svg" alt="Arista icon" width="15" height="15">Una arista</button>
+                        <div class="popup" id="popup12">
+                            <div class="popup-header">
+                                <h1>Insertar una arista</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <div class="formulario">
+                                    <div class="formulario-item">
+                                        <!-- Nodo inicial -->
+                                        <label for="insertarInicioArista">Inicio de la arista:</label><br>
+                                        <input type="text" id="insertarInicioArista" name="arista" placeholder="Nombre del primer nodo" autocomplete="off" required>
+                                    </div>
+                                    <div class="formulario-item">
+                                        <!-- Nodo final -->
+                                        <label for="insertarTerminoArista">T&eacutermino de la arista:</label><br>
+                                        <input type="text" id="insertarTerminoArista" name="arista" placeholder="Nombre del segundo nodo" autocomplete="off" required>
+                                    </div>
+                                </div>
+                                <div class="formulario">
+                                    <div class="formulario-item">
+                                        <!-- Peso del camino , valor por defecto 1 -->
+                                        <label for="insertarPesoArista">Peso de la arista:</label><br>
+                                        <input type="number" id="insertarPesoArista" name="arista" value="1" min="1">
+                                    </div>
+                                    <div class="formulario-item">
+                                        <!-- Dirigido boolean,valor por defecto unchecked[false] -->
+                                        <label for="dirigido">¿Dirigido?</label><br>
+                                        <input type="checkbox" id="insertarDirigido" name="arista">
+                                    </div>
+                                </div>
+                                <!-- Submit -->
+                                <button type="button" onclick="setArista()">Enter</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item" id="remove">
+                    <a href="#remove" class="btn"><img src="icons/remove.svg" alt="Icon of add" width="15" height="15">REMOVER</a>
+                    <div class="submenu">
+                        <!-- Remover una VERTICE -->
+                        <button type="button" data-popup-target="#popup21"><img src="icons/circle.svg" alt="Vertice icon" width="15" height="15">Un v&eacutertice</button>
+                        <div class="popup" id="popup21">
+                            <div class="popup-header">
+                                <h1>Remover un v&eacutertice</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <div class="formulario">
+                                    <div class="formulario-item">
+                                        <!-- Nombre -->
+                                        <label for="removerVertice">Nombre del v&eacutertice:</label><br>
+                                        <input type="text" id="removerVertice" name="vertice" autocomplete="off" required>
+                                    </div>
+                                    <!-- Submit -->
+                                    <button type="button" onclick="removeVertice()">Enter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Remover un ARISTA -->
+                        <button type="button" data-popup-target="#popup22"><img src="icons/line.svg" alt="Arista icon" width="15" height="15">Una arista</button>
+                        <div class="popup" id="popup22">
+                            <div class="popup-header">
+                                <h1>Remover una arista</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <div class="formulario">
+                                    <div class="formulario-item">
+                                        <!-- Nodo inicial -->
+                                        <label for="removerInicioArista">Inicio de la arista:</label><br>
+                                        <input type="text" id="removerInicioArista" name="arista" placeholder="Nombre del primer nodo" autocomplete="off" required>
+                                    </div>
+                                    <div class="formulario-item">
+                                        <!-- Nodo final -->
+                                        <label for="removerTerminoArista">T&eacutermino de la arista:</label><br>
+                                        <input type="text" id="removerTerminoArista" name="arista" placeholder="Nombre del segundo nodo" autocomplete="off" required>
+                                    </div>
+                                </div>
+                                <div class="formulario">
+                                    <div class="formulario-item">
+                                        <!-- Peso del camino , valor por defecto 1 -->
+                                        <label for="removerPesoArista">Peso de la arista:</label><br>
+                                        <input type="number" id="removerPesoArista" name="arista" value="1" min="1">
+                                    </div>
+                                    <div class="formulario-item">
+                                        <!-- Dirigido boolean,valor por defecto unchecked[false] -->
+                                        <label for="removerDirigido">¿Dirigido?</label><br>
+                                        <input type="checkbox" id="removerDirigido" name="arista">
+                                    </div>
+                                </div>
+                                <!-- Submit -->
+                                <button type="button" onclick="removeArista()">Enter</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item" id="operacion">
+                    <a href="#operacion" class="btn"><img src="icons/operation.svg" alt="Icon of Operations" width="15" height="15">OPERACIONES</a>
+                    <div class="submenu">
+                        <!-- Ejercicio 1 -->
+                        <button type="button" data-mostarMatriz data-popup-target="#popup1"><img src="icons/matrix.svg" alt="operation 1 icon" width="15" height="15">Mostar la matriz de caminos</button>
+                        <div class="popup" id="popup1">
+                            <div class="popup-header">
+                                <h1>Matriz de caminos</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <div class="formulario">
+                                    <div class="formulario-item">
+                                        <!-- Numero -->
+                                        <label for="matrizCamino">Insertar numero</label><br>
+                                        <input type="text" id="matrizCamino" name="ejercicio" autocomplete="off" required>
+                                    </div>
+                                    <!-- Submit -->
+                                    <button type="button" onclick="mostarMatrizCaminos()">Enter</button>
+                                </div>
+                                <!-- Tabla -->
+                                <div class="tablaEjercicio">
+                                    <div id="isConexo"></div>
+                                    <div id="tablaMatrizCamino"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 2 -->
+                        <button type="button" data-mostrarCamino data-popup-target="#popup2"><img src="icons/camino.svg" alt="operation 2 icon" width="15" height="15">Mostrar el camino mas corto para dos nodos</button>
+                        <div class="popup" id="popup2">
+                            <div class="popup-header">
+                                <h1>Camino mas corto<br>para dos nodos</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <div class="formulario">
+                                    <div class="formulario-item">
+                                        <!-- Nodo inicial -->
+                                        <label for="caminoInicial">Nodo inicial:</label><br>
+                                        <input type="text" id="caminoInicial" name="arista" placeholder="Nombre del primer nodo" autocomplete="off" required>
+                                    </div>
+                                    <div class="formulario-item">
+                                        <!-- Nodo final -->
+                                        <label for="caminoFinal">Nodo final:</label><br>
+                                        <input type="text" id="caminoFinal" name="arista" placeholder="Nombre del segundo nodo" autocomplete="off" required>
+                                    </div>
+                                </div>
+                                <!-- Submit -->
+                                <button type="button" onclick="recorridoMinimo()">Enter</button>
+                                <!-- Tabla -->
+                                <div class="tablaEjercicio">
+                                    <div id="caminoRecorrido"></div>
+                                    <div id="tamañoRecorrido"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 3 -->
+                        <button type="button" data-verificarHE data-popup-target="#popup3"><img src="icons/euler.svg" alt="operation 3 icon" width="15" height="15">Verificar si es Hamiltoniano o Euleriano</button>
+                        <div class="popup" id="popup3">
+                            <div class="popup-header">
+                                <h1>Verificar si es<br>Hamiltoniano y/o Euleriano</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <div class="HamiltonEuler">
+                                    <div class="Hamiltoniano">
+                                        <h2>Hamiltoniano</h2>
+                                        <button type="submit" onclick="hamilton()">enter</button>
+                                        <div id="resultadoHamilton"></div>
+                                    </div>
+                                    <div class="Euleriano">
+                                        <h2>Euleriano</h2>
+                                        <button type="submit" onclick="euler()">enter</button>
+                                        <div id="resultadoEuler"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 4 -->
+                        <button type="button" data-flujoMaximo data-popup-target="#popup4"><img src="icons/flujo.svg" alt="operation 4 icon" width="15" height="15">Indicar el flujo m&aacuteximo para un nodo</button>
+                        <div class="popup" id="popup4">
+                            <div class="popup-header">
+                                <h1>Flujo m&aacuteximo</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <div class="formulario">
+                                    <div class="formulario-item">
+                                        <!-- Nodo inicial -->
+                                        <label for="caminoInicial">Nodo inicial:</label><br>
+                                        <input type="text" id="caminoInicial" name="arista" placeholder="Nombre del primer nodo" autocomplete="off" required>
+                                    </div>
+                                    <div class="formulario-item">
+                                        <!-- Nodo final -->
+                                        <label for="caminoFinal">Nodo final:</label><br>
+                                        <input type="text" id="caminoFinal" name="arista" placeholder="Nombre del segundo nodo" autocomplete="off" required>
+                                    </div>
+                                </div>
+                                <div class="tablaEjercicio">
+                                    <button type="submit" onclick="flujoMaximo()">Calcular flujo</button>
+                                    <div id="flujo"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 5 -->
+                        <button type="button" data-obtenerArbol data-popup-target="#popup5"><img src="icons/tree.svg" alt="operation 5 icon" width="15" height="15">Obtener el &aacuterbol generador m&iacutenimo mediante prim o kruskal</button>
+                        <div class="popup" id="popup5">
+                            <div class="popup-header">
+                                <h1>&Aacuterbol generador m&iacutenimo</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <div class="tablaEjercicio">
+                                    <button type="submit" onclick="arbolsprim()">Generar &aacuterbol</button>
+                                    <div id="arbol"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <div id="wall" class="workbench">
+            <div class="aristasTabla">
+                <table>
+                    <caption>Aristas</caption>
+                    <tr>
+                        <th scope="col">Inicio</th>
+                        <th scope="col">T&eacutermino</th>
+                        <th scope="col">Dirigido</th>
+                        <th scope="col">Peso</th>
+                    </tr>
+                    <tbody id="aristasTabla"></tbody>
+                </table>
+            </div>
+            <div class="verticesTabla">
+                <table>
+                    <caption>Vertices</caption>
+                    <tr><th scope="col">Nombre</th></tr>
+                    <tbody id="verticesTabla"></tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

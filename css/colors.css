@@ -1,0 +1,19 @@
+/*Color scheme*/
+:root {
+  --workbench-bg:	#faf9f9;
+
+  --sidebar-bg:		#333641;
+  --sidebar-fg:		#222;
+
+  --sidebar-title-bg: #4f66bd;
+  --sidebar-title-fg:	#FFF;
+
+  --sidebar-submenu-bg:	#4c5c68;
+  --sidebar-submenu-fg:	#dcdcdd;
+
+  --red:		#e77f67;
+  --yellow:		#f7d794;
+  --orange:   #f3a683;
+  --blue:		#778beb;
+  --green: #9aecdb;
+}
